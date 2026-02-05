@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Pour Camelia</title>
+
+    <!-- Premium Romantic Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* 
+         * DESIGN SYSTEM: Dark Romance & Parchment
+         */
+      :root {
+        /* Backgrounds */
+        --bg-dark: #121013; /* Very dark purple/black */
+        --bg-texture: radial-gradient(
+          circle at 50% 50%,
+          #2a2426 0%,
+          #0d0c0d 100%
+        );
+
+        /* Parchment / Paper */
+        --paper-base: #e8dcc5;
+        --paper-shadow: inset 0 0 40px rgba(86, 68, 45, 0.4);
+
+        /* Envelope */
+        --envelope-main: #2c0e14; /* Deep Burgundy */
+        --envelope-flap: #3d121b;
+        --envelope-inner: #1a050a;
+
+        /* Colors */
+        --text-gold: #d4af37;
+        --text-ink: #3e3026; /* Dark brown ink look */
+        --accent-red: #800020;
+
+        /* Fonts */
+        --font-script: "Great Vibes", cursive; /* Romantic */
+        --font-serif: "Cormorant Garamond", serif; /* Body */
+        --font-title: "Cinzel", serif; /* Headers */
+
+        --ease-out-back: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      * {
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: var(--bg-dark);
+        background-image: var(--bg-texture);
+        font-family: var(--font-serif);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* Ambient Floating Particles/Dust */
+      #dust-canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        opacity: 0.4;
+      }
+
+      .stage {
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        max-width: 450px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        perspective: 1200px;
+      }
+
+      /* 
+         * ENVELOPE: Dark & Mysterious
+         */
+      .envelope-container {
+        position: relative;
+        width: 320px;
+        height: 220px;
+        cursor: pointer;
+        transition: transform 0.8s ease;
+      }
+
+      .envelope-container.open {
+        transform: translateY(
+          140px
+        ); /* Réduit pour mieux coordonner avec la carte */
+        cursor: default;
+      }
+
+      .envelope-body {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--envelope-main);
+        border-radius: 6px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+        z-index: 10;
+      }
+
+      .flap {
+        position: absolute;
+        pointer-events: none;
+        width: 0;
+        height: 0;
+        border-style: solid;
+      }
+
+      /* Side Flaps */
+      .flap.left {
+        top: 0;
+        left: 0;
+        z-index: 11;
+        border-width: 110px 0 110px 160px;
+        border-color: transparent transparent transparent var(--envelope-flap);
+        filter: brightness(0.9);
+      }
+      .flap.right {
+        top: 0;
+        right: 0;
+        z-index: 11;
+        border-width: 110px 160px 110px 0;
+        border-color: transparent var(--envelope-flap) transparent transparent;
+        filter: brightness(0.9);
+      }
+
+      /* Bottom Flap */
+      .flap.bottom {
+        bottom: 0;
+        left: 0;
+        z-index: 12;
+        border-width: 0 160px 120px 160px;
+        border-color: transparent transparent var(--envelope-main) transparent;
+        filter: brightness(1.1);
+      }
+
+      /* Top Flap (animated) */
+      .flap.top {
+        top: 0;
+        left: 0;
+        z-index: 13;
+        border-width: 120px 160px 0 160px;
+        border-color: var(--envelope-flap) transparent transparent transparent;
+        transform-origin: top;
+        transition:
+          transform 0.6s ease 0.2s,
+          z-index 0.1s linear 0.4s;
+      }
+      .envelope-container.open .flap.top {
+        transform: rotateX(180deg);
+        z-index: 1; /* Moves behind card */
+      }
+
+      /* Wax Seal */
+      .wax-seal {
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50px;
+        height: 50px;
+        background: radial-gradient(circle at 30% 30%, #d4af37, #8a6e20);
+        border-radius: 50%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        z-index: 20;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: var(--font-script);
+        font-size: 24px;
+        color: #3e1e00;
+        transition: opacity 0.4s;
+      }
+      .envelope-container.open .wax-seal {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      /* 
+         * THE LETTER (PARCHMENT STYLE)
+         */
+      .card {
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        width: 280px;
+        /* Adaptive height based on content */
+        min-height: 350px;
+        max-height: 80vh; /* Ne dépasse pas 80% de la hauteur de la vue */
+        padding: 18px;
+
+        /* Parchment Texture */
+        background-color: var(--paper-base);
+        background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.15'/%3E%3C/svg%3E");
+        box-shadow:
+          var(--paper-shadow),
+          0 10px 30px rgba(0, 0, 0, 0.4);
+        border-radius: 2px;
+
+        /* Initial State */
+        transform: translateX(-50%) translateY(0) scale(0.9);
+        z-index: 5; /* Inside envelope */
+        transition: transform 1s var(--ease-out-back) 0.5s;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      /* Ragged Edges Effect (CSS Mask would be better but keeping it simple/robust) */
+      .card::after {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 5px;
+        border: 1px solid rgba(139, 69, 19, 0.3);
+        pointer-events: none;
+      }
+
+      .envelope-container.open .card {
+        transform: translateX(-50%) translateY(-200px) scale(1); /* Réduit le déplacement et le scale */
+        z-index: 30; /* On top */
+        overflow: hidden; /* Évite le débordement */
+      }
+
+      /* 
+         * MEME ZONE (Polaroid)
+         */
+      .polaroid-frame {
+        background: white;
+        padding: 8px 8px 25px 8px; /* Classic polaroid bottom */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        transform: rotate(-3deg);
+        margin-bottom: 15px;
+        transition: transform 0.3s ease;
+      }
+      .polaroid-frame:hover {
+        transform: rotate(0deg) scale(1.05);
+      }
+
+      .meme-img {
+        width: 120px;
+        height: 120px;
+        background: #eee;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 50px;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center;
+      }
+
+      /* TEXT */
+      h1 {
+        font-family: var(--font-script);
+        color: var(--accent-red);
+        margin: 3px 0 8px 0;
+        font-size: 2.4rem;
+        text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+      }
+
+      p.message {
+        color: var(--text-ink);
+        font-size: 1rem;
+        line-height: 1.4;
+        margin-bottom: 15px;
+        font-style: italic;
+      }
+
+      /* ACTIONS */
+      .actions {
+        margin-top: auto;
+        display: flex;
+        gap: 10px;
+        width: 100%;
+        justify-content: space-around;
+        position: relative; /* For absolute positioning of running button */
+        height: 50px; /* reserve space */
+        align-items: center;
+      }
+
+      .btn {
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        font-family: var(--font-title);
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .btn-yes {
+        background: var(--accent-red);
+        color: #fff;
+        box-shadow: 0 4px 10px rgba(128, 0, 32, 0.4);
+        border: 1px solid #600018;
+        font-weight: 600;
+      }
+
+      .btn-no {
+        background: transparent;
+        color: var(--text-ink);
+        border: 1px solid rgba(62, 48, 38, 0.3);
+        position: relative; /* To allow movement */
+        font-size: 0.8rem;
+        white-space: nowrap;
+      }
+
+      /* Hint text below envelope */
+      .hint {
+        margin-top: 50px;
+        color: rgba(255, 255, 255, 0.4);
+        font-family: var(--font-title);
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        animation: pulse 3s infinite;
+      }
+      .envelope-container.open ~ .hint {
+        opacity: 0;
+      }
+
+      @keyframes pulse {
+        50% {
+          opacity: 0.2;
+        }
+      }
+
+      /* SUCCESS OVERLAY */
+      #success-layer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 1s ease;
+      }
+      #success-layer.visible {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .success-text {
+        color: var(--text-gold);
+        font-family: var(--font-script);
+        font-size: 4rem;
+        text-align: center;
+        animation: float 3s infinite ease-in-out;
+      }
+      .success-sub {
+        color: #fff;
+        opacity: 0.7;
+        margin-top: 10px;
+        font-family: var(--font-title);
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      /* Mobile specific adjustments to ensure yes button can grow huge */
+      @media (max-width: 480px) {
+        .card {
+          width: 90%;
+        }
+        .envelope-container {
+          transform: scale(0.9);
+        }
+        .envelope-container.open {
+          transform: translateY(160px) scale(0.9);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Ambient Dust Particles -->
+    <canvas id="dust-canvas"></canvas>
+
+    <div class="stage">
+      <div class="envelope-container" id="envelope">
+        <!-- Letter inside -->
+        <div class="card">
+          <!-- MEME / PHOTO AREA -->
+          <div class="polaroid-frame">
+            <div class="meme-img" id="meme-visual">🧸</div>
+          </div>
+
+          <h1>Ma Camelia,</h1>
+          <p class="message">
+            Je ne veux plus tourner autour du pot.<br />
+            Avec toi, tout est évident.<br />
+            <br />
+            <strong>Veux-tu sortir avec moi ?</strong>
+          </p>
+
+          <div class="actions">
+            <button class="btn btn-yes" id="btn-yes">OUI 💖</button>
+            <button class="btn btn-no" id="btn-no">Non 😢</button>
+          </div>
+        </div>
+
+        <!-- Envelope Parts -->
+        <div class="envelope-body"></div>
+        <div class="flap left"></div>
+        <div class="flap right"></div>
+        <div class="flap bottom"></div>
+        <div class="flap top"></div>
+        <div class="wax-seal">C</div>
+      </div>
+
+      <div class="hint">Tapoter pour ouvrir</div>
+    </div>
+
+    <!-- Final Celebration -->
+    <div id="success-layer">
+      <div class="success-text">Merci ma Camelia</div>
+      <div class="success-sub">Je t'aime ❤️</div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const envelope = document.getElementById("envelope");
+        const btnYes = document.getElementById("btn-yes");
+        const btnNo = document.getElementById("btn-no");
+        const memeVisual = document.getElementById("meme-visual");
+        const successLayer = document.getElementById("success-layer");
+
+        let isOpen = false;
+
+        // --- 1. OPENING ---
+        envelope.addEventListener("click", (e) => {
+          if (isOpen || e.target.closest(".btn")) return;
+          isOpen = true;
+          envelope.classList.add("open");
+        });
+
+        // --- 2. VIRAL MEME LOGIC ---
+        // List of states that change text and image when 'No' is clicked
+        const memeStates = [
+          { emoji: "🧸", text: "Non 😢" }, // Initial
+          { emoji: "😿", text: "Tu es sûre ?" }, // 1
+          { emoji: "💔", text: "Mais..." }, // 2
+          { emoji: "😱", text: "Ne fais pas ça !" }, // 3
+          { emoji: "😭", text: "Pitié !" }, // 4
+          { emoji: "🤕", text: "Aïe mon cœur..." }, // 5
+          { emoji: "👻", text: "Je suis mort..." }, // 6
+          { emoji: "💀", text: "C'est fini." }, // 7
+        ];
+
+        let clickCount = 0;
+
+        btnNo.addEventListener("click", (e) => {
+          e.stopPropagation();
+          clickCount++;
+
+          // 1. Change Text & Image
+          const stateIndex = Math.min(clickCount, memeStates.length - 1);
+          btnNo.innerText = memeStates[stateIndex].text;
+          memeVisual.innerText = memeStates[stateIndex].emoji;
+
+          // 2. Grow "Yes" Button (Exponentially)
+          const scale = 1 + clickCount * 0.5;
+          btnYes.style.transform = `scale(${scale})`;
+          btnYes.style.zIndex = "100"; // Make sure it covers other stuff
+
+          // If it gets too big, adjust origin so it doesn't fly off screen upwards
+          if (clickCount > 3) {
+            btnYes.style.transformOrigin = "center center";
+          }
+
+          // 3. Move "No" Button randomly/Away
+          const x = (Math.random() - 0.5) * 150;
+          const y = (Math.random() - 0.5) * 150;
+          btnNo.style.transform = `translate(${x}px, ${y}px) rotate(${Math.random() * 20 - 10}deg)`;
+        });
+
+        // --- 3. YES / CELEBRATION ---
+        btnYes.addEventListener("click", (e) => {
+          e.stopPropagation();
+
+          // Reset visual to happy
+          memeVisual.innerText = "🥰";
+
+          // Launch confetti
+          createGoldConfetti();
+
+          // Show overlay
+          setTimeout(() => {
+            successLayer.classList.add("visible");
+          }, 800);
+        });
+
+        // --- 4. GOLD DUST / CONFETTI ENGINE ---
+        function createGoldConfetti() {
+          const canvas = document.createElement("canvas");
+          canvas.style.position = "fixed";
+          canvas.style.top = "0";
+          canvas.style.left = "0";
+          canvas.style.width = "100%";
+          canvas.style.height = "100%";
+          canvas.style.pointerEvents = "none";
+          canvas.style.zIndex = "999";
+          document.body.appendChild(canvas);
+
+          const ctx = canvas.getContext("2d");
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+
+          const particles = [];
+          for (let i = 0; i < 150; i++) {
+            particles.push({
+              x: Math.random() * canvas.width,
+              y: Math.random() * canvas.height - canvas.height, // Start above
+              speed: Math.random() * 5 + 2,
+              size: Math.random() * 8 + 2,
+              color: Math.random() > 0.5 ? "#D4AF37" : "#FFF", // Gold & White
+              rotation: Math.random() * 360,
+            });
+          }
+
+          function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach((p, index) => {
+              p.y += p.speed;
+              p.rotation += 2;
+
+              ctx.save();
+              ctx.translate(p.x, p.y);
+              ctx.rotate((p.rotation * Math.PI) / 180);
+              ctx.fillStyle = p.color;
+              ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+              ctx.restore();
+
+              // Remove if out of screen
+              if (p.y > canvas.height) particles.splice(index, 1);
+            });
+
+            if (particles.length > 0) requestAnimationFrame(animate);
+          }
+          animate();
+        }
+
+        // --- 5. BACKGROUND AMBIENCE (Dust) ---
+        const dustCanvas = document.getElementById("dust-canvas");
+        const dCtx = dustCanvas.getContext("2d");
+        let w, h;
+        const dusts = [];
+
+        function resizeBg() {
+          w = window.innerWidth;
+          h = window.innerHeight;
+          dustCanvas.width = w;
+          dustCanvas.height = h;
+        }
+        window.addEventListener("resize", resizeBg);
+        resizeBg();
+
+        for (let i = 0; i < 30; i++) {
+          dusts.push({
+            x: Math.random() * w,
+            y: Math.random() * h,
+            vx: (Math.random() - 0.5) * 0.5,
+            vy: (Math.random() - 0.5) * 0.5,
+            size: Math.random() * 2,
+          });
+        }
+
+        function animateBg() {
+          dCtx.clearRect(0, 0, w, h);
+          dCtx.fillStyle = "rgba(255,255,255,0.3)";
+          dusts.forEach((d) => {
+            d.x += d.vx;
+            d.y += d.vy;
+            if (d.x < 0) d.x = w;
+            if (d.x > w) d.x = 0;
+            if (d.y < 0) d.y = h;
+            if (d.y > h) d.y = 0;
+            dCtx.beginPath();
+            dCtx.arc(d.x, d.y, d.size, 0, Math.PI * 2);
+            dCtx.fill();
+          });
+          requestAnimationFrame(animateBg);
+        }
+        animateBg();
+      });
+    </script>
+  </body>
+</html>
