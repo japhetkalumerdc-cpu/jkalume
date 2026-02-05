@@ -1,444 +1,637 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Japhet Kalume - Développeur Web Full Stack spécialisé en solutions web modernes et performantes. Portfolio professionnel présentant mes compétences et projets.">
-    <meta name="keywords" content="développeur web, full stack, JavaScript, React, Node.js, portfolio">
-    <meta name="author" content="Japhet Kalume">
-    <meta property="og:title" content="Japhet Kalume - Développeur Web Full Stack">
-    <meta property="og:description" content="Portfolio professionnel d'un développeur web full stack passionné par la création d'expériences web exceptionnelles.">
-    <meta property="og:type" content="website">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Japhet Kalume - Développeur Web Full Stack spécialisé en solutions web modernes et performantes. Portfolio professionnel présentant mes compétences et projets."
+    />
+    <meta
+      name="keywords"
+      content="développeur web, full stack, JavaScript, React, Node.js, portfolio"
+    />
+    <meta name="author" content="Japhet Kalume" />
+    <meta
+      property="og:title"
+      content="Japhet Kalume - Développeur Web Full Stack"
+    />
+    <meta
+      property="og:description"
+      content="Portfolio professionnel d'un développeur web full stack passionné par la création d'expériences web exceptionnelles."
+    />
+    <meta property="og:type" content="website" />
     <title>Japhet Kalume - Développeur Web Full Stack</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <!-- Navigation -->
-    <nav class="nav" id="navbar" role="navigation" aria-label="Navigation principale">
-        <div class="nav-container">
-            <a href="#hero" class="nav-logo" aria-label="Retour à l'accueil">JK</a>
-            <button class="nav-toggle" id="navToggle" aria-label="Menu de navigation" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#about" class="nav-link">À propos</a></li>
-                <li><a href="#skills" class="nav-link">Compétences</a></li>
-                <li><a href="#projects" class="nav-link">Projets</a></li>
-                <li><a href="#contact" class="nav-link nav-link-cta">Contact</a></li>
-            </ul>
-        </div>
+    <nav
+      class="nav"
+      id="navbar"
+      role="navigation"
+      aria-label="Navigation principale"
+    >
+      <div class="nav-container">
+        <a href="#hero" class="nav-logo" aria-label="Retour à l'accueil">JK</a>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Menu de navigation"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#about" class="nav-link">À propos</a></li>
+          <li><a href="#skills" class="nav-link">Compétences</a></li>
+          <li><a href="#projects" class="nav-link">Projets</a></li>
+          <li><a href="#contact" class="nav-link nav-link-cta">Contact</a></li>
+          <li>
+            <a href="camelia.html" class="nav-link nav-link-cta">camelia</a>
+          </li>
+        </ul>
+      </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <p class="hero-greeting" data-animate>Bonjour, je suis</p>
-                <h1 class="hero-title" data-animate>Japhet Kalume</h1>
-                <h2 class="hero-subtitle" data-animate>Développeur Web Full Stack</h2>
-                <p class="hero-description" data-animate>
-                    Je conçois et développe des solutions web modernes, performantes et scalables qui transforment les idées en expériences digitales exceptionnelles.
-                </p>
-                <div class="hero-cta" data-animate>
-                    <a href="#projects" class="btn btn-primary">Voir mes projets</a>
-                    <a href="#contact" class="btn btn-secondary">Me contacter</a>
-                </div>
-            </div>
-            <div class="hero-image" data-animate>
-                <div class="hero-image-wrapper">
-                    <img src="image/jaf.png" alt="Japhet Kalume - Développeur Web Full Stack" class="hero-profile-image">
-                    <div class="hero-image-glow"></div>
-                </div>
-            </div>
-            
+      <div class="hero-container">
+        <div class="hero-content">
+          <p class="hero-greeting" data-animate>Bonjour, je suis</p>
+          <h1 class="hero-title" data-animate>Japhet Kalume</h1>
+          <h2 class="hero-subtitle" data-animate>Développeur Web Full Stack</h2>
+          <p class="hero-description" data-animate>
+            Je conçois et développe des solutions web modernes, performantes et
+            scalables qui transforment les idées en expériences digitales
+            exceptionnelles.
+          </p>
+          <div class="hero-cta" data-animate>
+            <a href="#projects" class="btn btn-primary">Voir mes projets</a>
+            <a href="#contact" class="btn btn-secondary">Me contacter</a>
+          </div>
         </div>
+        <div class="hero-image" data-animate>
+          <div class="hero-image-wrapper">
+            <img
+              src="image/jaf.png"
+              alt="Japhet Kalume - Développeur Web Full Stack"
+              class="hero-profile-image"
+            />
+            <div class="hero-image-glow"></div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- About Section -->
     <section class="section about" id="about">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">À propos</span>
-                <h2 class="section-title">Qui suis-je ?</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p class="about-paragraph">
-                        Développeur web full stack passionné avec une expertise approfondie dans la création d'applications web modernes et performantes. Je me spécialise dans la transformation d'idées complexes en solutions digitales élégantes et scalables.
-                    </p>
-                    <p class="about-paragraph">
-                        Mon approche combine excellence technique, design thinking et focus sur l'expérience utilisateur. Je m'engage à livrer du code propre, maintenable et optimisé qui répond aux standards les plus élevés de l'industrie.
-                    </p>
-                    <p class="about-paragraph">
-                        Constamment en veille technologique, j'adopte les meilleures pratiques et les technologies émergentes pour garantir des solutions pérennes et innovantes.
-                    </p>
-                </div>
-                <div class="about-highlights">
-                    <div class="highlight-card">
-                        <div class="highlight-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                            </svg>
-                        </div>
-                        <h3 class="highlight-title">Code de qualité</h3>
-                        <p class="highlight-description">Standards professionnels et best practices</p>
-                    </div>
-                    <div class="highlight-card">
-                        <div class="highlight-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                                <line x1="8" y1="21" x2="16" y2="21"></line>
-                                <line x1="12" y1="17" x2="12" y2="21"></line>
-                            </svg>
-                        </div>
-                        <h3 class="highlight-title">Design moderne</h3>
-                        <p class="highlight-description">Interfaces élégantes et intuitives</p>
-                    </div>
-                    <div class="highlight-card">
-                        <div class="highlight-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-                            </svg>
-                        </div>
-                        <h3 class="highlight-title">Performance</h3>
-                        <p class="highlight-description">Optimisation et scalabilité</p>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">À propos</span>
+          <h2 class="section-title">Qui suis-je ?</h2>
         </div>
+        <div class="about-content">
+          <div class="about-text">
+            <p class="about-paragraph">
+              Développeur web full stack passionné avec une expertise
+              approfondie dans la création d'applications web modernes et
+              performantes. Je me spécialise dans la transformation d'idées
+              complexes en solutions digitales élégantes et scalables.
+            </p>
+            <p class="about-paragraph">
+              Mon approche combine excellence technique, design thinking et
+              focus sur l'expérience utilisateur. Je m'engage à livrer du code
+              propre, maintenable et optimisé qui répond aux standards les plus
+              élevés de l'industrie.
+            </p>
+            <p class="about-paragraph">
+              Constamment en veille technologique, j'adopte les meilleures
+              pratiques et les technologies émergentes pour garantir des
+              solutions pérennes et innovantes.
+            </p>
+          </div>
+          <div class="about-highlights">
+            <div class="highlight-card">
+              <div class="highlight-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+              <h3 class="highlight-title">Code de qualité</h3>
+              <p class="highlight-description">
+                Standards professionnels et best practices
+              </p>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </div>
+              <h3 class="highlight-title">Design moderne</h3>
+              <p class="highlight-description">
+                Interfaces élégantes et intuitives
+              </p>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                </svg>
+              </div>
+              <h3 class="highlight-title">Performance</h3>
+              <p class="highlight-description">Optimisation et scalabilité</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Skills Section -->
     <section class="section skills" id="skills">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Compétences</span>
-                <h2 class="section-title">Expertise technique</h2>
-            </div>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3 class="skill-category-title">Front-End</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">
-                            <span class="skill-name">HTML5 / CSS3</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="95"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">JavaScript / ES6+</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="92"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">React.js</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="90"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Next.js</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="85"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Tailwind CSS</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="88"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3 class="skill-category-title">Back-End</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">
-                            <span class="skill-name">Node.js</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="88"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Python / Django</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="90"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">PostgreSQL / MongoDB</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="85"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">REST API / GraphQL</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="87"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Express.js</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="86"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3 class="skill-category-title">Outils & DevOps</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">
-                            <span class="skill-name">Git / GitHub</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="93"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Docker</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="82"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">CI/CD</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="80"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">AWS / Vercel</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="78"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Webpack / Vite</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-progress="84"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Compétences</span>
+          <h2 class="section-title">Expertise technique</h2>
         </div>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3 class="skill-category-title">Front-End</h3>
+            <div class="skill-list">
+              <div class="skill-item">
+                <span class="skill-name">HTML5 / CSS3</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="95"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">JavaScript / ES6+</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="92"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">React.js</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="90"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Next.js</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="85"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Tailwind CSS</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="88"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3 class="skill-category-title">Back-End</h3>
+            <div class="skill-list">
+              <div class="skill-item">
+                <span class="skill-name">Node.js</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="88"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Python / Django</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="90"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">PostgreSQL / MongoDB</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="85"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">REST API / GraphQL</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="87"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Express.js</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="86"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3 class="skill-category-title">Outils & DevOps</h3>
+            <div class="skill-list">
+              <div class="skill-item">
+                <span class="skill-name">Git / GitHub</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="93"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Docker</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="82"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">CI/CD</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="80"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">AWS / Vercel</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="78"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Webpack / Vite</span>
+                <div class="skill-bar">
+                  <div class="skill-progress" data-progress="84"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Projects Section -->
     <section class="section projects" id="projects">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Réalisations</span>
-                <h2 class="section-title">Projets sélectionnés</h2>
-            </div>
-            <div class="projects-grid">
-                <article class="project-card">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <a href="#" class="project-link" aria-label="Voir le projet E-Commerce Platform">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                    <polyline points="15 3 21 3 21 9"></polyline>
-                                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">E-Commerce Platform</h3>
-                        <p class="project-description">
-                            Plateforme e-commerce complète avec gestion de panier, paiements sécurisés et tableau de bord administrateur. Architecture scalable et performances optimisées.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Node.js</span>
-                            <span class="tag">PostgreSQL</span>
-                            <span class="tag">Stripe</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <a href="#" class="project-link" aria-label="Voir le projet Task Management App">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                    <polyline points="15 3 21 3 21 9"></polyline>
-                                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Task Management App</h3>
-                        <p class="project-description">
-                            Application de gestion de tâches collaborative en temps réel avec drag & drop, notifications et synchronisation multi-appareils.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Next.js</span>
-                            <span class="tag">Django</span>
-                            <span class="tag">WebSocket</span>
-                            <span class="tag">Redis</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <a href="#" class="project-link" aria-label="Voir le projet Analytics Dashboard">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                    <polyline points="15 3 21 3 21 9"></polyline>
-                                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Analytics Dashboard</h3>
-                        <p class="project-description">
-                            Dashboard analytique interactif avec visualisations de données en temps réel, exports personnalisés et système de reporting automatisé.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">D3.js</span>
-                            <span class="tag">Express</span>
-                            <span class="tag">MongoDB</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <a href="#" class="project-link" aria-label="Voir le projet Social Learning Platform">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                                    <polyline points="15 3 21 3 21 9"></polyline>
-                                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Social Learning Platform</h3>
-                        <p class="project-description">
-                            Plateforme d'apprentissage sociale avec système de certification, parcours guidés et éditeur de code interactif intégré.
-                        </p>
-                        <div class="project-tags">
-                            <span class="tag">Django</span>
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">PostgreSQL</span>
-                            <span class="tag">AWS</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Réalisations</span>
+          <h2 class="section-title">Projets sélectionnés</h2>
         </div>
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-image">
+              <div class="project-overlay">
+                <a
+                  href="#"
+                  class="project-link"
+                  aria-label="Voir le projet E-Commerce Platform"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                    ></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">E-Commerce Platform</h3>
+              <p class="project-description">
+                Plateforme e-commerce complète avec gestion de panier, paiements
+                sécurisés et tableau de bord administrateur. Architecture
+                scalable et performances optimisées.
+              </p>
+              <div class="project-tags">
+                <span class="tag">React</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">Stripe</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <div class="project-overlay">
+                <a
+                  href="#"
+                  class="project-link"
+                  aria-label="Voir le projet Task Management App"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                    ></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Task Management App</h3>
+              <p class="project-description">
+                Application de gestion de tâches collaborative en temps réel
+                avec drag & drop, notifications et synchronisation
+                multi-appareils.
+              </p>
+              <div class="project-tags">
+                <span class="tag">Next.js</span>
+                <span class="tag">Django</span>
+                <span class="tag">WebSocket</span>
+                <span class="tag">Redis</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <div class="project-overlay">
+                <a
+                  href="#"
+                  class="project-link"
+                  aria-label="Voir le projet Analytics Dashboard"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                    ></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Analytics Dashboard</h3>
+              <p class="project-description">
+                Dashboard analytique interactif avec visualisations de données
+                en temps réel, exports personnalisés et système de reporting
+                automatisé.
+              </p>
+              <div class="project-tags">
+                <span class="tag">React</span>
+                <span class="tag">D3.js</span>
+                <span class="tag">Express</span>
+                <span class="tag">MongoDB</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <div class="project-overlay">
+                <a
+                  href="#"
+                  class="project-link"
+                  aria-label="Voir le projet Social Learning Platform"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                    ></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Social Learning Platform</h3>
+              <p class="project-description">
+                Plateforme d'apprentissage sociale avec système de
+                certification, parcours guidés et éditeur de code interactif
+                intégré.
+              </p>
+              <div class="project-tags">
+                <span class="tag">Django</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">AWS</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
     <section class="section contact" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Contact</span>
-                <h2 class="section-title">Travaillons ensemble</h2>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <p class="contact-text">
-                        Vous avez un projet en tête ? Je serais ravi d'échanger avec vous sur vos besoins et de voir comment je peux vous aider à concrétiser vos idées.
-                    </p>
-                    <div class="contact-methods">
-                        <a href="mailto:japhet.kalume@example.com" class="contact-method">
-                            <div class="contact-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                    <polyline points="22,6 12,13 2,6"></polyline>
-                                </svg>
-                            </div>
-                            <div>
-                                <span class="contact-label">Email</span>
-                                <span class="contact-value">japhet.kalume@example.com</span>
-                            </div>
-                        </a>
-                        <a href="https://github.com/japhetkalume" target="_blank" rel="noopener noreferrer" class="contact-method">
-                            <div class="contact-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                                </svg>
-                            </div>
-                            <div>
-                                <span class="contact-label">GitHub</span>
-                                <span class="contact-value">@japhetkalume</span>
-                            </div>
-                        </a>
-                        <a href="https://linkedin.com/in/japhetkalume" target="_blank" rel="noopener noreferrer" class="contact-method">
-                            <div class="contact-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                                    <rect x="2" y="9" width="4" height="12"></rect>
-                                    <circle cx="4" cy="4" r="2"></circle>
-                                </svg>
-                            </div>
-                            <div>
-                                <span class="contact-label">LinkedIn</span>
-                                <span class="contact-value">@japhetkalume</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <form class="contact-form" id="contactForm" novalidate>
-                    <div class="form-group">
-                        <label for="name" class="form-label">Nom complet</label>
-                        <input type="text" id="name" name="name" class="form-input" required aria-required="true">
-                        <span class="form-error" id="nameError"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" id="email" name="email" class="form-input" required aria-required="true">
-                        <span class="form-error" id="emailError"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea id="message" name="message" class="form-textarea" rows="5" required aria-required="true"></textarea>
-                        <span class="form-error" id="messageError"></span>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-full">
-                        <span class="btn-text">Envoyer le message</span>
-                        <span class="btn-loader"></span>
-                    </button>
-                    <div class="form-success" id="formSuccess">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                        </svg>
-                        Message envoyé avec succès !
-                    </div>
-                </form>
-            </div>
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Contact</span>
+          <h2 class="section-title">Travaillons ensemble</h2>
         </div>
+        <div class="contact-content">
+          <div class="contact-info">
+            <p class="contact-text">
+              Vous avez un projet en tête ? Je serais ravi d'échanger avec vous
+              sur vos besoins et de voir comment je peux vous aider à
+              concrétiser vos idées.
+            </p>
+            <div class="contact-methods">
+              <a href="mailto:japhet.kalume@example.com" class="contact-method">
+                <div class="contact-icon">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    ></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <span class="contact-label">Email</span>
+                  <span class="contact-value">japhet.kalume@example.com</span>
+                </div>
+              </a>
+              <a
+                href="https://github.com/japhetkalume"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-method"
+              >
+                <div class="contact-icon">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <span class="contact-label">GitHub</span>
+                  <span class="contact-value">@japhetkalume</span>
+                </div>
+              </a>
+              <a
+                href="https://linkedin.com/in/japhetkalume"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-method"
+              >
+                <div class="contact-icon">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                    ></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                  </svg>
+                </div>
+                <div>
+                  <span class="contact-label">LinkedIn</span>
+                  <span class="contact-value">@japhetkalume</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="name" class="form-label">Nom complet</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="form-input"
+                required
+                aria-required="true"
+              />
+              <span class="form-error" id="nameError"></span>
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-input"
+                required
+                aria-required="true"
+              />
+              <span class="form-error" id="emailError"></span>
+            </div>
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                class="form-textarea"
+                rows="5"
+                required
+                aria-required="true"
+              ></textarea>
+              <span class="form-error" id="messageError"></span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              <span class="btn-text">Envoyer le message</span>
+              <span class="btn-loader"></span>
+            </button>
+            <div class="form-success" id="formSuccess">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              Message envoyé avec succès !
+            </div>
+          </form>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p class="footer-text">© 2026 Japhet Kalume. Tous droits réservés.</p>
-                <p class="footer-text">Conçu et développé avec passion</p>
-            </div>
+      <div class="container">
+        <div class="footer-content">
+          <p class="footer-text">© 2026 Japhet Kalume. Tous droits réservés.</p>
+          <p class="footer-text">Conçu et développé avec passion</p>
         </div>
+      </div>
     </footer>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
